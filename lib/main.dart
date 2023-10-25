@@ -81,9 +81,10 @@ class _StockPriceChartState extends State<StockPriceChart> {
         ),
         Expanded(
           child: charts.TimeSeriesChart(
+            defaultRenderer: charts.LineRendererConfig(includePoints: true),
             [
               charts.Series<StockPrice, DateTime>(
-                
+
                 id: 'Harga Tertinggi',
                 domainFn: (StockPrice price, _) => price.timestamp,
                 measureFn: (StockPrice price, _) => price.high, // Menggunakan atribut "h" (harga tertinggi)
